@@ -63,3 +63,28 @@
 #     return True if str(x) == str(x)[::-1] else False
 
 # print(isPalindrome(121))
+
+
+# Min Cost Climbing Stairs
+# Input: cost[] = [10, 15, 20]
+# Output: 15
+# Explanation: Cheapest option is to start at cost[1], pay that cost, and go to the top.
+
+
+# def minCostClimbingStairs(cost):
+#     length = len(cost)
+#     if length == 0:
+#         return 0
+#     elif length == 1:
+#         return cost[0]
+#     arr = [0] * length
+#     arr[0] = cost[0]
+#     arr[1] = cost[1]
+
+#     for x in range(2, length):
+#         arr[x] = cost[x] + min(arr[x - 1], arr[x - 2])
+#     return min(arr[-1], arr[-2])
+
+
+# cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+# print(minCostClimbingStairs(cost))
