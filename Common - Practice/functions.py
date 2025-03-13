@@ -88,3 +88,70 @@
 
 # cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
 # print(minCostClimbingStairs(cost))
+
+
+# 0 - 1 Knapsack Problem
+# Input: W = 4, val[] = [1, 2, 3], wt[] = [4, 5, 1]
+# Output: 3
+# Explanation: Choose the last item, which weighs 1 unit and has a value of 3.
+# Input: W = 3, val[] = [1, 2, 3], wt[] = [4, 5, 6]
+# Output: 0
+# Explanation: Every item has a weight exceeding the knapsack's capacity (3).
+# Input: W = 5, val[] = [10, 40, 30, 50], wt[] = [5, 4, 2, 3]
+# Output: 80
+# Explanation: Choose the third item (value 30, weight 2) and the last item (value 50, weight 3) for a total value of 80.
+
+
+# def knapsack(W, val, wt):
+#     updatedWTArr = []
+#     updatedValArr = []
+#     localValue = 0
+#     for x in range(len(wt)):
+#         if wt[x] <= W:
+#             updatedValArr.append(val[x])
+#             updatedWTArr.append(wt[x])
+#     if len(updatedValArr):
+#         finalArr = []
+#         for x in range(len(updatedValArr)):
+#             finalArr.append(
+#                 {
+#                     "val": updatedValArr[x],
+#                     "wt": updatedWTArr[x],
+#                     "multiplier": updatedValArr[x] / updatedWTArr[x],
+#                 }
+#             )
+#         sortedArr = sorted(finalArr, key=lambda x: x["multiplier"], reverse=True)
+#         print(sortedArr)
+#         localW = W
+#         for x in sortedArr:
+#             if localW >= x["wt"]:
+#                 localValue += x["val"]
+#                 localW -= x["wt"]
+#         return localValue
+#     else:
+#         return localValue
+
+
+# W, val, wt = 5, [1, 9, 2, 9, 4, 4], [5, 2, 3, 4, 9, 6]
+# print(knapsack(W, val, wt))
+
+
+# anagrams problem
+# input = ['cat','bat','tac','tab']
+# output = [['cat','tac'],['bat','tab']]
+# def checkForSameWord(current: str, new: str):
+#     return sorted(current) == sorted(new)
+
+
+# def checkForAnagrams(input: list[str]):
+#     returnList = []
+#     for x in input:
+#         for y in input:
+#             if x != y and checkForSameWord(x, y):
+#                 print(x != y, checkForSameWord(x, y), x, y)
+#                 returnList.append([x, y])
+#                 input.remove(y)
+#     return returnList
+
+
+# print(checkForAnagrams(["cat", "bat", "tac", "tab"]))
